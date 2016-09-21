@@ -5,9 +5,11 @@
   	var Jackbox = {};
     
     var createNotification = function(_message, type){
-        var notification = document.createElement("div");
+      var notification = document.createElement("div");
       var progress = document.createElement("div");
       var message = document.createElement("span");
+      var ttl = 5;
+      var timeout = null;
 
       notification.className = "notification";
       notification.className += " " + type;
@@ -21,17 +23,29 @@
 
       var purge = function(){
         document.getElementById("jackbox").removeChild(notification);
+        window.clearTimeout(timeout);
+      }
+
+      var resetCounter = function(){
+        notification.className = notification.className.replace("counting","");
+        window.clearTimeout(timeout); 
+      }
+
+      var startCounter = function(){
+        setTimeout(function(){
+            notification.className += " counting";
+            timeout = window.setTimeout(purge,(ttl * 1000));
+        },500);
       }
 
       notification.addEventListener('click', purge);
+      notification.addEventListener('mouseover', resetCounter);
+      notification.addEventListener('mouseout', startCounter);
 
       
 
       document.getElementById("jackbox").appendChild(notification);
-      setTimeout(function(){
-        notification.className += " counting";
-        //setTimeout(purge,5000);
-      },500);
+      startCounter();      
 
       
     }
