@@ -39,8 +39,8 @@
       }
 
       notification.addEventListener('click', purge);
-      notification.addEventListener('mouseover', resetCounter);
-      notification.addEventListener('mouseout', startCounter);
+      notification.addEventListener('mouseenter', resetCounter);
+      notification.addEventListener('mouseleave', startCounter);
 
       
 
