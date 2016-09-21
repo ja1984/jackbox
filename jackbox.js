@@ -14,6 +14,7 @@
 
       progress.className="progress";
       message.innerHTML = _message;
+      message.className="message";
 
       notification.appendChild(progress);  
       notification.appendChild(message);
@@ -29,7 +30,7 @@
       document.getElementById("jackbox").appendChild(notification);
       setTimeout(function(){
         notification.className += " counting";
-        setTimeout(purge,5000);
+        //setTimeout(purge,5000);
       },500);
 
       

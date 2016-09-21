@@ -10,33 +10,33 @@
 }
 
 .notification{
-  padding: 5px;
+  padding: 7px;
   position: relative;
 }
 
 .notification.alert{
-  background: red;
+  background: #D32F2F;
 }
 
 .notification.warning{
-  background: yellow;
+  background: #FFC107;
 }
 
 .notification.information{
-  background: blue;
+  background: #0288D1;
 }
 
 .notification.success{
-  background: green;
+  background: #4CAF50;
 }
 
 .notification .progress{
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   bottom: 0;
-  background: rgba(255,255,255,.5);
-  width: 100%;
+  background: rgba(255,255,255,.2);
+  width: 0%;
 }
 
 .notification .message{
@@ -47,12 +47,12 @@
 }
 
 .notification.counting .progress{
-  width: 0%;
+  width: 100%;
   transition: width linear 5s;
 }
 
 .notification:hover .progress{
-  width: 100%;
+  width: 0%;
 }
 
 
