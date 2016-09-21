@@ -1,0 +1,68 @@
+<html>
+	<head>
+	<script type="text/javascript" src="jackbox.js"></script>
+<style type="text/css">
+.notifications{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.notification{
+  padding: 5px;
+  position: relative;
+}
+
+.notification.alert{
+  background: red;
+}
+
+.notification.warning{
+  background: yellow;
+}
+
+.notification.information{
+  background: blue;
+}
+
+.notification.success{
+  background: green;
+}
+
+.notification .progress{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(255,255,255,.5);
+  width: 100%;
+}
+
+.notification .message{
+  display: inline-block;
+  color: #fff;
+  position: relative;
+  z-index: 5;
+}
+
+.notification.counting .progress{
+  width: 0%;
+  transition: width linear 5s;
+}
+
+.notification:hover .progress{
+  width: 100%;
+}
+
+
+</style>
+
+	</head>
+	<body>
+	</body>
+
+	<script>
+		Jackbox.init();
+	</script>
+</html>
