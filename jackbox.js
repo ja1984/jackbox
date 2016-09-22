@@ -8,6 +8,8 @@
       var notification = document.createElement("div");
       var progress = document.createElement("div");
       var message = document.createElement("span");
+      var dismissButton = document.createElement("div");
+
       var ttl = 5;
       var timeout = null;
 
@@ -15,11 +17,15 @@
       notification.className += " " + type;
 
       progress.className="progress";
+
       message.innerHTML = _message;
       message.className="message";
 
+      dismissButton.className="dismiss"
+
       notification.appendChild(progress);  
       notification.appendChild(message);
+      notification.appendChild(dismissButton);
 
       var purge = function(){
         document.getElementById("jackbox").removeChild(notification);
@@ -33,21 +39,26 @@
 
       var startCounter = function(){
         setTimeout(function(){
-            notification.className += " counting";
+            console.log(notification.className.indexOf("counting"));
+            if(notification.className.indexOf("counting") === -1)
+                notification.className += " counting";
+
             timeout = window.setTimeout(purge,(ttl * 1000));
-        },500);
+        },10);
       }
 
-      notification.addEventListener('click', purge);
+      dismissButton.addEventListener('click', purge);
       notification.addEventListener('mouseenter', resetCounter);
       notification.addEventListener('mouseleave', startCounter);
 
       
 
       document.getElementById("jackbox").appendChild(notification);
-      startCounter();      
-
+      setTimeout(function(){
+        notification.className +=" show";  
+      },10);
       
+      startCounter();      
     }
 
     Jackbox.alert = function(_message){

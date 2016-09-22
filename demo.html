@@ -10,8 +10,14 @@
 }
 
 .notification{
-  padding: 7px;
+  padding: 0 10px;
+  height: 0;
   position: relative;
+  transition: height ease .2s;
+}
+
+.notification.show{
+	height: 40px;
 }
 
 .notification.alert{
@@ -35,7 +41,8 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255,255,255,.2);
+  background: #fff;
+  opacity: .2;
   width: 0%;
 }
 
@@ -44,6 +51,27 @@
   color: #fff;
   position: relative;
   z-index: 5;
+      display: inline-block;
+    line-height: 40px;
+    height: 100%;
+    vertical-align: middle;
+	font-size: 1.2rem;
+}
+
+.notification .dismiss,.notification .icon{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	height: 20px;
+	width: 20px;
+	background: #fff;
+	cursor: pointer;
+}
+
+.notification .icon{
+	right: auto;
+	left: 10px;
+	cursor: : default;
 }
 
 .notification.counting .progress{
