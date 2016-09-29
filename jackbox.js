@@ -9,6 +9,7 @@
       var progress = document.createElement("div");
       var message = document.createElement("span");
       var dismissButton = document.createElement("div");
+      var icon = document.createElement("div");
 
       var ttl = 5;
       var timeout = null;
@@ -22,14 +23,19 @@
       message.className="message";
 
       dismissButton.className="dismiss"
+      icon.className="icon"
 
       notification.appendChild(progress);  
       notification.appendChild(message);
       notification.appendChild(dismissButton);
+      notification.appendChild(icon);
 
       var purge = function(){
-        document.getElementById("jackbox").removeChild(notification);
+        notification.className = notification.className.replace("show","");
         window.clearTimeout(timeout);
+        setTimeout(function(){
+          document.getElementById("jackbox").removeChild(notification);  
+        },200);        
       }
 
       var resetCounter = function(){
@@ -39,7 +45,6 @@
 
       var startCounter = function(){
         setTimeout(function(){
-            console.log(notification.className.indexOf("counting"));
             if(notification.className.indexOf("counting") === -1)
                 notification.className += " counting";
 
@@ -61,8 +66,8 @@
       startCounter();      
     }
 
-    Jackbox.alert = function(_message){
-      createNotification(_message, "alert");
+    Jackbox.error = function(_message){
+      createNotification(_message, "error");
 		}
 
     Jackbox.success = function(_message){

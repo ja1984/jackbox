@@ -14,26 +14,47 @@
   height: 0;
   position: relative;
   transition: height ease .2s;
+  overflow: hidden;
 }
 
 .notification.show{
 	height: 40px;
 }
 
-.notification.alert{
+.notification.error{
   background: #D32F2F;
+}
+
+.notification.error .icon{
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAP1BMVEX///////////////////////////////////////////////////////////////////////////////////81m6ZbAAAAFHRSTlMAARMUFRZCRUjHyMrLzNDR0tPU1a674P0AAABpSURBVHjaldBRDsAQEARQalVptaj7n7XCiGzqx3xtHrEZYi1yMh4n9VF7g8MrR4K92eIuxaKwexMIpZyo2gPrqmEjumgxNQTP5QDjSD8LgWnbq4irbjugzJhKX3tAHWoaO7q5ffp1S/kAqTkFoLZRo+IAAAAASUVORK5CYII=);
+
 }
 
 .notification.warning{
   background: #FFC107;
 }
 
+.notification.warning .icon{
+  	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAbFBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////82G0A9AAAAI3RSTlMAAwgJChYYHDM5Pj9UVl5gand/hoqMo6ixzNLW1/Dy9fj5/d1ifTIAAABpSURBVHgBfcvXDsIwDEZh9t4DwgiBnPd/R6TWbqPW8n919Fke+IOuzK9veJ5npe0T1T7b1nZwX47Gq0DeNL+JQ11H4lTwwk3vgZPUi4XimofULw8VJ0QpvmpFQ4E4aLzbSG82+gOw0dsfxfMOG7rxV1MAAAAASUVORK5CYII=);
+
+}
+
 .notification.information{
   background: #0288D1;
 }
 
+.notification.information .icon{
+  	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAElBMVEX///////////////////////+65XQCAAAABXRSTlMAWVqA/JrNy4MAAAAzSURBVHgBY8AOWDEAbkFUnUNKEOYNJhZMbzLCxVgRelhYmTGDClOMAZsYAzYxBqAYIQAAOhcCT05GiOkAAAAASUVORK5CYII=);
+
+}
+
 .notification.success{
   background: #4CAF50;
+}
+
+.notification.success .icon{
+  	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAANlBMVEX///////////////////////////////////////////////////////////////////////8BOg0gAAAAEXRSTlMADBUWISIvN0VHw8TS1eHx+lKCPYwAAABASURBVHgBY6ADYGTDIsbFz44pJsjHikeMgwlTjFOAhwlDLzOvIEgUIYYQhYqhinIjxBCiYDF0UZAYhigLjcMPABCQAp33JzUTAAAAAElFTkSuQmCC);
+
 }
 
 .notification .progress{
@@ -56,6 +77,7 @@
     height: 100%;
     vertical-align: middle;
 	font-size: 1.2rem;
+  padding-left: 30px;
 }
 
 .notification .dismiss,.notification .icon{
@@ -64,14 +86,16 @@
 	top: 10px;
 	height: 20px;
 	width: 20px;
-	background: #fff;
+	filter: brightness(100%);
+  -webkit-filter: brightness(100%);
+
 	cursor: pointer;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAABlBMVEX///////9VfPVsAAAAAXRSTlMAQObYZgAAACBJREFUeAFjwAsYgYCQICMawCqI1w5k9jAWRAC8gpgAAFq6AHEXHe01AAAAAElFTkSuQmCC);
 }
 
 .notification .icon{
 	right: auto;
 	left: 10px;
-	cursor: : default;
 }
 
 .notification.counting .progress{
@@ -82,12 +106,16 @@
 .notification:hover .progress{
   width: 0%;
 }
-
-
 </style>
 
 	</head>
 	<body>
+
+<button class="button" onClick="Jackbox.success('Test')">Add success</button>
+<button class="button" onClick="Jackbox.warning('Test')">Add warning</button>
+<button class="button" onClick="Jackbox.error('Test')">Add error</button>
+<button class="button" onClick="Jackbox.information('Test')">Add information</button>
+
 	</body>
 
 	<script>
