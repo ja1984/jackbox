@@ -25,13 +25,14 @@
 
     var ttl = lib.settings.notification.time;
     var timeout = null;
-
+    
     notification.className = "notification";
     notification.className += " " + type;
 
     notification.className += " " + lib.settings.notification.classNames;
 
     progress.className = "progress";
+    progress.style.transitionDuration =  lib.settings.notification.time + "s";
 
     message.innerHTML = _message;
     message.className = "message";
