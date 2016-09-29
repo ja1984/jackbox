@@ -1,113 +1,94 @@
 (function (window) {
-  'use strict';
+  var lib = {};
+  lib.version = 1.0;
+  lib.settings = {
+    notification: {
+      time: 5
+    }
+  }
 
-  function define() {
-    var Jackbox = {};
+  lib.init = function () {
+    var wrapper = document.createElement("div");
+    wrapper.className = "notifications";
+    wrapper.id = "jackbox";
+    window.document.body.appendChild(wrapper);
+  }
 
-    var createNotification = function (_message, type) {
-      var notification = document.createElement("div");
-      var progress = document.createElement("div");
-      var message = document.createElement("span");
-      var dismissButton = document.createElement("div");
-      var icon = document.createElement("div");
+  var createNotification = function (_message, type) {
+    var notification = document.createElement("div");
+    var progress = document.createElement("div");
+    var message = document.createElement("span");
+    var dismissButton = document.createElement("div");
+    var icon = document.createElement("div");
 
-      var ttl = 5;
-      var timeout = null;
+    var ttl = lib.settings.notification.time;
+    var timeout = null;
 
-      notification.className = "notification";
-      notification.className += " " + type;
+    notification.className = "notification";
+    notification.className += " " + type;
 
-      progress.className = "progress";
+    progress.className = "progress";
 
-      message.innerHTML = _message;
-      message.className = "message";
+    message.innerHTML = _message;
+    message.className = "message";
 
-      dismissButton.className = "dismiss"
-      icon.className = "icon"
+    dismissButton.className = "dismiss"
+    icon.className = "icon"
 
-      notification.appendChild(progress);
-      notification.appendChild(message);
-      notification.appendChild(dismissButton);
-      notification.appendChild(icon);
+    notification.appendChild(progress);
+    notification.appendChild(message);
+    notification.appendChild(dismissButton);
+    notification.appendChild(icon);
 
-      var purge = function () {
-        notification.className = notification.className.replace("show", "");
-        window.clearTimeout(timeout);
-        setTimeout(function () {
-          document.getElementById("jackbox").removeChild(notification);
-        }, 200);
-      }
-
-      var resetCounter = function () {
-        notification.className = notification.className.replace("counting", "");
-        window.clearTimeout(timeout);
-      }
-
-      var startCounter = function () {
-        setTimeout(function () {
-          if (notification.className.indexOf("counting") === -1)
-            notification.className += " counting";
-
-          timeout = window.setTimeout(purge, (ttl * 1000));
-        }, 10);
-      }
-
-      dismissButton.addEventListener('click', purge);
-      notification.addEventListener('mouseenter', resetCounter);
-      notification.addEventListener('mouseleave', startCounter);
-
-
-
-      document.getElementById("jackbox").appendChild(notification);
+    var purge = function () {
+      notification.className = notification.className.replace("show", "");
+      window.clearTimeout(timeout);
       setTimeout(function () {
-        notification.className += " show";
+        document.getElementById("jackbox").removeChild(notification);
+      }, 200);
+    }
+
+    var resetCounter = function () {
+      notification.className = notification.className.replace("counting", "");
+      window.clearTimeout(timeout);
+    }
+
+    var startCounter = function () {
+      setTimeout(function () {
+        if (notification.className.indexOf("counting") === -1)
+          notification.className += " counting";
+
+        timeout = window.setTimeout(purge, (ttl * 1000));
       }, 10);
-
-      startCounter();
     }
 
-    Jackbox.error = function (_message) {
-      createNotification(_message, "error");
-    }
+    dismissButton.addEventListener('click', purge);
+    notification.addEventListener('mouseenter', resetCounter);
+    notification.addEventListener('mouseleave', startCounter);
 
-    Jackbox.success = function (_message) {
-      createNotification(_message, "success");
-    }
+    document.getElementById("jackbox").appendChild(notification);
+    setTimeout(function () {
+      notification.className += " show";
+    }, 10);
 
-    Jackbox.warning = function (_message) {
-      createNotification(_message, "warning");
-    }
-
-    Jackbox.information = function (_message) {
-      createNotification(_message, "information");
-    }
-
-    Jackbox.init = function () {
-      var wrapper = document.createElement("div");
-      wrapper.className = "notifications";
-      wrapper.id = "jackbox";
-      window.document.body.appendChild(wrapper);
-
-
-      // var css = 'h1 { background: red; }',
-      //   head = document.head || document.getElementsByTagName('head')[0],
-      //   style = document.createElement('style');
-      // style.type = 'text/css';
-      // if (style.styleSheet) {
-      //   style.styleSheet.cssText = css;
-      // } else {
-      //   style.appendChild(document.createTextNode(css));
-      // }
-
-      //head.appendChild(style);
-
-    }
-
-    return Jackbox;
+    startCounter();
   }
 
-  if (typeof (Jackbox) === 'undefined') {
-    window.Jackbox = define();
+  lib.error = function (_message) {
+    createNotification(_message, "error");
   }
 
-})(window);
+  lib.success = function (_message) {
+    createNotification(_message, "success");
+  }
+
+  lib.warning = function (_message) {
+    createNotification(_message, "warning");
+  }
+
+  lib.information = function (_message) {
+    createNotification(_message, "information");
+  }
+
+  window['Jackbox'] = lib;
+} (window));
