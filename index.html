@@ -8,34 +8,43 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="jackbox.css" media="screen">
   </head>
   <body>
     <section class="page-header">
       <h1 class="project-name">Jackbox</h1>
-      <h2 class="project-tagline">Display timed notifications easy</h2>
+      <h2 class="project-tagline">Javascript library to display notifications</h2>
       <a href="https://github.com/ja1984/jackbox" class="btn">View on GitHub</a>
       <a href="https://github.com/ja1984/jackbox/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/ja1984/jackbox/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
-      <button class="button" onClick="Jackbox.success('Test')">Add success</button>
-  <button class="button" onClick="Jackbox.warning('Test')">Add warning</button>
-  <button class="button" onClick="Jackbox.error('Test')">Add error</button>
-  <button class="button" onClick="Jackbox.information('Test')">Add information</button>
-      <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+      <h1>
+<a id="jackbox" class="anchor" href="#jackbox" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Jackbox</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+<p>Display timed notifications easy</p>
 
+<p><img src="https://github.com/ja1984/jackbox/blob/master/preview.gif" alt="Preview"></p>
 
-<p>You can @mention a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<h5>
+<a id="getting-started-is-easy" class="anchor" href="#getting-started-is-easy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting started is easy</h5>
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
+    <span class="pl-smi">Jackbox</span>.<span class="pl-en">init</span>();
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span></pre></div>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+<h5>
+<a id="adding-notifications-is-just-as-easy" class="anchor" href="#adding-notifications-is-just-as-easy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Adding notifications is just as easy</h5>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
+    <span class="pl-smi">Jackbox</span>.<span class="pl-en">error</span>(<span class="pl-s"><span class="pl-pds">"</span>Oh noes, something went wrong!<span class="pl-pds">"</span></span>);
+
+    <span class="pl-smi">Jackbox</span>.<span class="pl-en">warning</span>(<span class="pl-s"><span class="pl-pds">"</span>Yeah, you might want to check in to that<span class="pl-pds">"</span></span>);
+
+    <span class="pl-smi">Jackbox</span>.<span class="pl-en">success</span>(<span class="pl-s"><span class="pl-pds">"</span>Woop woop!<span class="pl-pds">"</span></span>);
+
+    <span class="pl-smi">Jackbox</span>.<span class="pl-en">information</span>(<span class="pl-s"><span class="pl-pds">"</span>I'm only here because I can<span class="pl-pds">"</span></span>);
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span></pre></div>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/ja1984/jackbox">Jackbox</a> is maintained by <a href="https://github.com/ja1984">ja1984</a>.</span>
@@ -44,9 +53,7 @@
       </footer>
 
     </section>
-    <script src="./jackbox.min.js"></script>
-  	<script>
-		Jackbox.init();
-	</script>
+
+  
   </body>
 </html>
