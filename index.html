@@ -68,7 +68,13 @@
 
 <script src="jackbox.js"></script>
   <script>
-    Jackbox.init();
+    var customSettings = {
+      notification:{
+        time : 10,
+        classNames : "custom-class-name"
+      }
+    }
+    Jackbox.init(customSettings);
   </script>
 </body>
 
