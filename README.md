@@ -1,11 +1,26 @@
 # Jackbox
 Display timed notifications easy
 
-## Jackbox is a small javascript library to show timed messages to the user at the bottom of the screen.
-Getting started is easy
 
-´´´
+
+
+##### Getting started is easy
+
+```javascript
 <script>
-		Jackbox.init();
-	</script>
-´´´
+    Jackbox.init();
+</script>
+```
+
+##### Adding notifications is just as easy
+```javascript
+<script>
+    Jackbox.error("Oh noes, something went wrong!");
+
+    Jackbox.warning("Yeah, you might want to check in to that");
+
+    Jackbox.success("Woop woop!");
+
+    Jackbox.information("I'm only here because I can");
+</script>
+```
