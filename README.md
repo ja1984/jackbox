@@ -2,6 +2,7 @@
 Display timed notifications easy
 
 
+![Preview](https://github.com/ja1984/jackbox/blob/master/preview.gif)
 
 
 ##### Getting started is easy
