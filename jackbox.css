@@ -101,4 +101,5 @@
 
 .notification:hover .progress{
   width: 0%;
+  transition: none!important;
 }

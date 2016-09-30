@@ -3,11 +3,13 @@
   lib.version = 1.0;
   lib.settings = {
     notification: {
-      time: 5
+      time: 5,
+      classNames: ""
     }
   }
 
-  lib.init = function () {
+  lib.init = function (customSettings) {
+    lib.settings = Object.assign({}, lib.settings, customSettings);
     var wrapper = document.createElement("div");
     wrapper.className = "notifications";
     wrapper.id = "jackbox";
@@ -23,11 +25,14 @@
 
     var ttl = lib.settings.notification.time;
     var timeout = null;
-
+    
     notification.className = "notification";
     notification.className += " " + type;
 
+    notification.className += " " + lib.settings.notification.classNames;
+
     progress.className = "progress";
+    progress.style.transitionDuration =  lib.settings.notification.time + "s";
 
     message.innerHTML = _message;
     message.className = "message";
