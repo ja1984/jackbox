@@ -4,4 +4,4 @@ all the help we can get. We want to keep it easy to implement and easy to use.
 
 ## Contribute
 
-You con contribute by fixing existing issues, report bugs or suggesting improvements and/or new features.
+You can contribute by fixing existing issues, report bugs or suggesting improvements and/or new features.
