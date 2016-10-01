@@ -49,7 +49,10 @@
 
     var purge = function () {
       notification.classList.remove("show");
+      notification.removeEventListener('mouseleave', startCounter);
+
       window.clearTimeout(timeout);
+
       setTimeout(function () {
         document.getElementById("jackbox").removeChild(notification);
       }, 200);
@@ -65,7 +68,9 @@
         if (!notification.classList.contains("counting")){
           notification.classList.add("counting");
         }
-
+        if(timeout != null){
+          window.clearTimeout(timeout);
+        }
         timeout = window.setTimeout(purge, (ttl * 1000));
       }, 10);
     }
