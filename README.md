@@ -32,7 +32,7 @@ Display timed notifications easy
     var customSettings = {
         notification: {
             time : 10, //in seconds, default is set to 5
-            classNames : "custom-class-name" //can be multiple
+            classNames : ["custom-class-name", "another-class-name"] //Array of classes
         }
     }
     Jackbox.init(customSettings);
