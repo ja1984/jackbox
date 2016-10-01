@@ -11,7 +11,7 @@
   lib.init = function (customSettings) {
     lib.settings = Object.assign({}, lib.settings, customSettings);
     var wrapper = document.createElement("div");
-    wrapper.className = "notifications";
+    wrapper.classList.add("notifications");
     wrapper.id = "jackbox";
     window.document.body.appendChild(wrapper);
   }
@@ -26,19 +26,19 @@
     var ttl = lib.settings.notification.time;
     var timeout = null;
     
-    notification.className = "notification";
-    notification.className += " " + type;
+    notification.classList.add("notification");
+    notification.classList.add(type);
 
-    notification.className += " " + lib.settings.notification.classNames;
+    notification.classList.add(lib.settings.notification.classNames);
 
-    progress.className = "progress";
+    progress.classList.add("progress");
     progress.style.transitionDuration =  lib.settings.notification.time + "s";
 
     message.innerHTML = _message;
-    message.className = "message";
+    message.classList.add("message");
 
-    dismissButton.className = "dismiss"
-    icon.className = "icon"
+    dismissButton.classList.add("dismiss");
+    icon.classList.add("icon");
 
     notification.appendChild(progress);
     notification.appendChild(message);
@@ -46,7 +46,7 @@
     notification.appendChild(icon);
 
     var purge = function () {
-      notification.className = notification.className.replace("show", "");
+      notification.classList.remove("show");
       window.clearTimeout(timeout);
       setTimeout(function () {
         document.getElementById("jackbox").removeChild(notification);
@@ -54,14 +54,14 @@
     }
 
     var resetCounter = function () {
-      notification.className = notification.className.replace("counting", "");
+      notification.classList.remove("counting");
       window.clearTimeout(timeout);
     }
 
     var startCounter = function () {
       setTimeout(function () {
         if (notification.className.indexOf("counting") === -1)
-          notification.className += " counting";
+          notification.classList.add("counting");
 
         timeout = window.setTimeout(purge, (ttl * 1000));
       }, 10);
@@ -73,7 +73,7 @@
 
     document.getElementById("jackbox").appendChild(notification);
     setTimeout(function () {
-      notification.className += " show";
+      notification.classList.add("show");
     }, 10);
 
     startCounter();
