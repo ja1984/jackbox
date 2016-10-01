@@ -62,8 +62,9 @@
 
     var startCounter = function () {
       setTimeout(function () {
-        if (notification.className.indexOf("counting") === -1)
+        if (!notification.classList.contains("counting")){
           notification.classList.add("counting");
+        }
 
         timeout = window.setTimeout(purge, (ttl * 1000));
       }, 10);
@@ -81,7 +82,7 @@
     startCounter();
   }
 
-  lib.error = function (_message) {
+  lib.error = function (_message ) {
     createNotification(_message, "error");
   }
 
