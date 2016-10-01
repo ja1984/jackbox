@@ -22,7 +22,7 @@
 }
 
 .notification.error .icon{
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAP1BMVEX///////////////////////////////////////////////////////////////////////////////////81m6ZbAAAAFHRSTlMAARMUFRZCRUjHyMrLzNDR0tPU1a674P0AAABpSURBVHjaldBRDsAQEARQalVptaj7n7XCiGzqx3xtHrEZYi1yMh4n9VF7g8MrR4K92eIuxaKwexMIpZyo2gPrqmEjumgxNQTP5QDjSD8LgWnbq4irbjugzJhKX3tAHWoaO7q5ffp1S/kAqTkFoLZRo+IAAAAASUVORK5CYII=);
+	background-image: url("images/icon-error.svg");
 
 }
 
@@ -31,7 +31,7 @@
 }
 
 .notification.warning .icon{
-  	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAbFBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////82G0A9AAAAI3RSTlMAAwgJChYYHDM5Pj9UVl5gand/hoqMo6ixzNLW1/Dy9fj5/d1ifTIAAABpSURBVHgBfcvXDsIwDEZh9t4DwgiBnPd/R6TWbqPW8n919Fke+IOuzK9veJ5npe0T1T7b1nZwX47Gq0DeNL+JQ11H4lTwwk3vgZPUi4XimofULw8VJ0QpvmpFQ4E4aLzbSG82+gOw0dsfxfMOG7rxV1MAAAAASUVORK5CYII=);
+	background-image: url("images/icon-warning.svg");
 
 }
 
@@ -40,8 +40,7 @@
 }
 
 .notification.information .icon{
-  	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAElBMVEX///////////////////////+65XQCAAAABXRSTlMAWVqA/JrNy4MAAAAzSURBVHgBY8AOWDEAbkFUnUNKEOYNJhZMbzLCxVgRelhYmTGDClOMAZsYAzYxBqAYIQAAOhcCT05GiOkAAAAASUVORK5CYII=);
-
+	background-image: url("images/icon-information.svg");
 }
 
 .notification.success{
@@ -49,8 +48,7 @@
 }
 
 .notification.success .icon{
-  	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAANlBMVEX///////////////////////////////////////////////////////////////////////8BOg0gAAAAEXRSTlMADBUWISIvN0VHw8TS1eHx+lKCPYwAAABASURBVHgBY6ADYGTDIsbFz44pJsjHikeMgwlTjFOAhwlDLzOvIEgUIYYQhYqhinIjxBCiYDF0UZAYhigLjcMPABCQAp33JzUTAAAAAElFTkSuQmCC);
-
+	background-image: url("images/icon-success.svg");
 }
 
 .notification .progress{
@@ -68,10 +66,10 @@
   color: #fff;
   position: relative;
   z-index: 5;
-      display: inline-block;
-    line-height: 40px;
-    height: 100%;
-    vertical-align: middle;
+	display: inline-block;
+	line-height: 40px;
+	height: 100%;
+	vertical-align: middle;
 	font-size: 1.2rem;
   padding-left: 30px;
 }
@@ -84,9 +82,8 @@
 	width: 20px;
 	filter: brightness(100%);
   -webkit-filter: brightness(100%);
-
 	cursor: pointer;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAABlBMVEX///////9VfPVsAAAAAXRSTlMAQObYZgAAACBJREFUeAFjwAsYgYCQICMawCqI1w5k9jAWRAC8gpgAAFq6AHEXHe01AAAAAElFTkSuQmCC);
+	background-image: url("images/icon-dismiss.svg");
 }
 
 .notification .icon{
