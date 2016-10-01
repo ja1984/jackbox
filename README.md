@@ -25,3 +25,16 @@ Display timed notifications easy
     Jackbox.information("I'm only here because I can");
 </script>
 ```
+
+##### Customization is a breeze
+```javascript
+<script>
+    var customSettings = {
+        notification: {
+            time : 10, //in seconds, default is set to 5
+            classNames : "custom-class-name" //can be multiple
+        }
+    }
+    Jackbox.init(customSettings);
+</script>
+```
