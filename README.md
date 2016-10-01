@@ -40,5 +40,5 @@ Display timed notifications easy
 ```
 
 #### Browser support
-The file **jackbox.polyfill.js** can be used for modern browser support. 
+The file **jackbox.polyfills.js** can be used for modern browser support. 
 **IE8 and less**, needs to use polyfill for [Array.prototype.forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
