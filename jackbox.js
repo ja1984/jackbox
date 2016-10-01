@@ -4,7 +4,7 @@
   lib.settings = {
     notification: {
       time: 5,
-      classNames: ""
+      classNames: []
     }
   }
 
@@ -28,8 +28,10 @@
     
     notification.classList.add("notification");
     notification.classList.add(type);
-
-    notification.classList.add(lib.settings.notification.classNames);
+  
+    lib.settings.notification.classNames.forEach(function (className){
+      notification.classList.add(className);
+    })
 
     progress.classList.add("progress");
     progress.style.transitionDuration =  lib.settings.notification.time + "s";
