@@ -32,9 +32,13 @@ Display timed notifications easy
     var customSettings = {
         notification: {
             time : 10, //in seconds, default is set to 5
-            classNames : "custom-class-name" //can be multiple
+            classNames : ["custom-class-name", "another-class-name"] //Array of classes
         }
     }
     Jackbox.init(customSettings);
 </script>
 ```
+
+#### Browser support
+The file **jackbox.polyfill.js** can be used for modern browser support. 
+**IE8 and less**, needs to use polyfill for [Array.prototype.forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
