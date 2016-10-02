@@ -26,6 +26,18 @@ Display timed notifications easy
 </script>
 ```
 
+##### Adding notifications with custom settings
+```javascript
+<script>
+    var notificationCustomSettings = {
+		time : 20,
+		classNames: ["long-notification-class"]
+	};
+	
+	Jackbox.information('Im a custom setting message!',notificationCustomSettings);
+</script>
+```
+
 ##### Customization is a breeze
 ```javascript
 <script>
