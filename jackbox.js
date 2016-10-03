@@ -15,7 +15,11 @@
 
   lib.init = function (customSettings) {
 
-    lib.settings = Object.assign({}, lib.settings, customSettings);
+    if(customSettings){
+      lib.oldBrowserSupport = customSettings.oldBrowserSupport || false;
+      lib.settings.notification = Object.assign({}, lib.settings.notification, customSettings.notification);
+    }
+    
 
     var wrapper = document.createElement("div");
     wrapper.classList.add("notifications");
@@ -24,7 +28,8 @@
   }
 
   var createNotification = function (_message, type, customSettings) {
-    var settings = Object.assign({}, lib.settings.notification, customSettings);
+    var notificationSettings = Object.assign({}, lib.settings.notification, customSettings);
+    
     var notification = document.createElement("div");
     var progress = document.createElement("div");
     var message = document.createElement("div");
@@ -32,8 +37,8 @@
     var actionButton = document.createElement("div");
     var icon = document.createElement("div");
 
-    var ttl = settings.time;
-    icon.innerHTML = settings.icon;
+    var ttl = notificationSettings.time;
+    icon.innerHTML = notificationSettings.icon;
 
     var timeout = null;
 
@@ -44,7 +49,7 @@
 
     notification.classList.add(type);
 
-    settings.classNames.forEach(function (className) {
+    notificationSettings.classNames.forEach(function (className) {
       notification.classList.add(className);
     })
 
@@ -56,13 +61,10 @@
 
     action.classList.add("action");
     actionButton.classList.add("action-button");
-    actionButton.innerHTML = settings.actionButtonText;
+    actionButton.innerHTML = notificationSettings.actionButtonText;
     icon.classList.add("icon");
 
     action.appendChild(actionButton);
-
-
-
 
     notification.appendChild(icon);
     notification.appendChild(message);
