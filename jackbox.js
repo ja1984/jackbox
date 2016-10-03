@@ -14,9 +14,9 @@
   }
 
   lib.init = function (customSettings) {
-    
+
     lib.settings = Object.assign({}, lib.settings, customSettings);
-    
+
     var wrapper = document.createElement("div");
     wrapper.classList.add("notifications");
     wrapper.id = "jackbox";
@@ -24,7 +24,7 @@
   }
 
   var createNotification = function (_message, type, customSettings) {
-	  var settings = Object.assign({}, lib.settings.notification, customSettings);
+    var settings = Object.assign({}, lib.settings.notification, customSettings);
     var notification = document.createElement("div");
     var progress = document.createElement("div");
     var message = document.createElement("div");
@@ -38,14 +38,18 @@
     var timeout = null;
 
     notification.classList.add("notification");
+
+    if (lib.settings.oldBrowserSupport)
+      notification.classList.add("old-support")
+
     notification.classList.add(type);
-  
-    settings.classNames.forEach(function (className){
+
+    settings.classNames.forEach(function (className) {
       notification.classList.add(className);
     })
 
     progress.classList.add("progress");
-    progress.style.transitionDuration =  ttl + "s";
+    progress.style.transitionDuration = ttl + "s";
 
     message.innerHTML = _message;
     message.classList.add("message");
@@ -57,9 +61,9 @@
 
     action.appendChild(actionButton);
 
-    
-    
-    
+
+
+
     notification.appendChild(icon);
     notification.appendChild(message);
     notification.appendChild(action);
