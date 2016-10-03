@@ -59,7 +59,7 @@
           <button onClick="javascript:Jackbox.warning('Im a success message')">Warning</button>
           <button onClick="javascript:Jackbox.error('Im a success message')">Error</button>
           <button onClick="javascript:Jackbox.information('Im a success message')">Information</button>
-
+<button onClick="javascript:Jackbox.information('Im a success message',notificationCustomSettings)">Information(20s)</button>
         </div>
 
         <footer class="site-footer">
@@ -73,6 +73,10 @@
   <script src="jackbox.polyfills.js"></script>
   <script src="jackbox.js"></script>
   <script>
+	var notificationCustomSettings = {
+		time : 20,
+		classNames: ["long-notification-class"]
+	}
     var customSettings = {
       settings: {
       notification:{

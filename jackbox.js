@@ -23,7 +23,8 @@
     window.document.body.appendChild(wrapper);
   }
 
-  var createNotification = function (_message, type) {
+  var createNotification = function (_message, type, customSettings) {
+	var settings = Object.assign({}, lib.settings.notification, customSettings);
     var notification = document.createElement("div");
     var progress = document.createElement("div");
     var message = document.createElement("div");
@@ -31,21 +32,20 @@
     var actionButton = document.createElement("div");
     var icon = document.createElement("div");
 
+    var ttl = settings.time;
     icon.innerHTML = lib.settings.notification.icon;
 
-    var ttl = lib.settings.notification.time;
     var timeout = null;
 
     notification.classList.add("notification");
     notification.classList.add(type);
-
-    lib.settings.notification.classNames.forEach(function (className) {
+  
+    settings.classNames.forEach(function (className){
       notification.classList.add(className);
     })
 
     progress.classList.add("progress");
-    
-    progress.style.transitionDuration = lib.settings.notification.time + "s";
+    progress.style.transitionDuration =  ttl + "s";
 
     message.innerHTML = _message;
     message.classList.add("message");
@@ -105,20 +105,20 @@
     startCounter();
   }
 
-  lib.error = function (_message) {
-    createNotification(_message, "error");
+  lib.error = function (_message, customSettings) {
+    createNotification(_message, "error", customSettings);
   }
 
-  lib.success = function (_message) {
-    createNotification(_message, "success");
+  lib.success = function (_message, customSettings) {
+    createNotification(_message, "success", customSettings);
   }
 
-  lib.warning = function (_message) {
-    createNotification(_message, "warning");
+  lib.warning = function (_message, customSettings) {
+    createNotification(_message, "warning", customSettings);
   }
 
-  lib.information = function (_message) {
-    createNotification(_message, "information");
+  lib.information = function (_message, customSettings) {
+    createNotification(_message, "information", customSettings);
   }
 
   window['Jackbox'] = lib;
