@@ -23,7 +23,6 @@
 
 .notification.error .icon{
 	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIj48c3R5bGU+LnMwe2ZpbGw6bm9uZTtzdHJva2Utd2lkdGg6MjtzdHJva2U6I2ZmZjt9PC9zdHlsZT48ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLjA3MjUzMDgsMCwwLDEuMDcwOTg3NiwtMC43MTYwNDkzOCwtMC43MDk4NzY1NSkiIHN0eWxlPSJzdHJva2Utd2lkdGg6MjtzdHJva2U6I2ZmZiI+PHBhdGggZD0iTTQgNCAxNiAxNnpNNCAxNiAxNiA0eiIgY2xhc3M9InMwIi8+PC9nPjwvc3ZnPg==');
-
 }
 
 .notification.warning{
@@ -32,7 +31,6 @@
 
 .notification.warning .icon{
 	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIj48c3R5bGU+LnMwe2ZpbGw6bm9uZTtzdHJva2Utd2lkdGg6MjtzdHJva2U6I2ZmZjt9PC9zdHlsZT48cGF0aCBkPSJtMSAxNSAxOCAwLTMgMGMwIDAgMC01IDAtNyAwLTMtNC01LTYtNWwwLTIgMCAyQzggMyA0IDUgNCA4YzAgMiAwIDcgMCA3ek04IDE4bDQgMHoiIGNsYXNzPSJzMCIvPjwvc3ZnPg==');
-
 }
 
 .notification.information{
@@ -58,7 +56,7 @@
 	bottom: 0;
 	background: #fff;
 	opacity: .2;
-	width: 0%;
+	width: 0;
 }
 
 .notification .message{
@@ -97,6 +95,6 @@
 }
 
 .notification:hover .progress{
-	width: 0%;
+	width: 0;
 	transition: none!important;
 }
