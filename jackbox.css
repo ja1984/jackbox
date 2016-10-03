@@ -30,7 +30,7 @@
     flex: 0 auto;
 }
 
-.notification .icon i{
+.notification .icon i, .notification .action .action-button i{
     display: block;
     width: 20px;
     height: 20px;
@@ -38,22 +38,13 @@
 
 .notification .message{
     font-size: 1.2rem;
-    flex: 3 0px;
+    flex: 3 0;
 }
 
 .notification .action .action-button{
     text-transform: uppercase;
     cursor: pointer;
 }
-
-.notification .action .action-button i{
-	display: block;
-    width: 20px;
-    height: 20px;
-	cursor: pointer;
-	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIj48c3R5bGU+LnMwe2ZpbGw6I2ZmZjt9PC9zdHlsZT48cGF0aCBkPSJtMiAzIDYgMCAwLTIgNCAwIDAgMiA2IDAgMCAyLTE2IDB6TTMgNmwyIDAgMCAxMSAxMCAwIDAtMTEgMiAwIDAgMTMtMTQgMHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=');
-}
-
 
 .notification .progress{
 	position: absolute;
@@ -63,27 +54,23 @@
 	background: #fff;
 	opacity: .2;
 	width: 0;
-  flex-grow: none;
-  padding: 0;
+    flex-grow: none;
+    padding: 0;
 }
-
-
-
-
 
 .notification.old-support{
-  display: table;
-  flex: none;
-
+    display: table;
+    flex: none;
 }
+
 .notification.old-support .icon, .notification.old-support .message, .notification.old-support .action{
-  display: table-cell;
-  vertical-align:middle;
-  width: 100%;
+    display: table-cell;
+    vertical-align:middle;
+    width: 100%;
 }
 
 .notification.old-support .icon, .notification.old-support .action{
-  width: auto;
+    width: auto;
 }
 
 .notification.counting .progress{
@@ -126,4 +113,9 @@
 
 .notification.success .icon i{
 	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIj48cGF0aCBkPSJtMyA5IDUgNSA5LTktOSA5eiIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2Utd2lkdGg6MjtzdHJva2U6I2ZmZiIvPjwvc3ZnPg==');
+}
+
+.notification .action .action-button i{
+	cursor: pointer;
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIj48c3R5bGU+LnMwe2ZpbGw6I2ZmZjt9PC9zdHlsZT48cGF0aCBkPSJtMiAzIDYgMCAwLTIgNCAwIDAgMiA2IDAgMCAyLTE2IDB6TTMgNmwyIDAgMCAxMSAxMCAwIDAtMTEgMiAwIDAgMTMtMTQgMHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=');
 }
