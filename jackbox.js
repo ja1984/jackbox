@@ -26,10 +26,10 @@
 
     var ttl = settings.time;
     var timeout = null;
-    
+
     notification.classList.add("notification");
     notification.classList.add(type);
-  
+
     settings.classNames.forEach(function (className){
       notification.classList.add(className);
     })
@@ -65,19 +65,27 @@
     }
 
     var startCounter = function () {
-      setTimeout(function () {
-        if (!notification.classList.contains("counting")){
-          notification.classList.add("counting");
-        }
-        if(timeout != null){
-          window.clearTimeout(timeout);
-        }
-        timeout = window.setTimeout(purge, (ttl * 1000));
-      }, 10);
+      if (!notification.classList.contains("stop-counting")) {
+        setTimeout(function () {
+          if (!notification.classList.contains("counting")){
+            notification.classList.add("counting");
+          }
+          if(timeout != null){
+            window.clearTimeout(timeout);
+          }
+          timeout = window.setTimeout(purge, (ttl * 1000));
+        }, 10);
+      }
+    }
+
+    var stopCounter = function () {
+      notification.classList.add("stop-counting");
+      resetCounter();
     }
 
     dismissButton.addEventListener('click', purge);
     notification.addEventListener('mouseenter', resetCounter);
+    notification.addEventListener('click', stopCounter);
     notification.addEventListener('mouseleave', startCounter);
 
     document.getElementById("jackbox").appendChild(notification);
