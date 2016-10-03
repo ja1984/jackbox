@@ -1,16 +1,16 @@
 .notifications{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
 .notification{
-  padding: 0 10px;
-  height: 0;
-  position: relative;
-  transition: height ease .2s;
-  overflow: hidden;
+	padding: 0 10px;
+	height: 0;
+	position: relative;
+	transition: height ease .2s;
+	overflow: hidden;
 }
 
 .notification.show{
@@ -18,7 +18,7 @@
 }
 
 .notification.error{
-  background: #D32F2F;
+	background: #D32F2F;
 }
 
 .notification.error .icon{
@@ -27,7 +27,7 @@
 }
 
 .notification.warning{
-  background: #FFC107;
+	background: #FFC107;
 }
 
 .notification.warning .icon{
@@ -36,7 +36,7 @@
 }
 
 .notification.information{
-  background: #0288D1;
+	background: #0288D1;
 }
 
 .notification.information .icon{
@@ -44,7 +44,7 @@
 }
 
 .notification.success{
-  background: #4CAF50;
+	background: #4CAF50;
 }
 
 .notification.success .icon{
@@ -52,26 +52,26 @@
 }
 
 .notification .progress{
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: #fff;
-  opacity: .2;
-  width: 0%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+	opacity: .2;
+	width: 0%;
 }
 
 .notification .message{
-  display: inline-block;
-  color: #fff;
-  position: relative;
-  z-index: 5;
+	display: inline-block;
+	color: #fff;
+	position: relative;
+	z-index: 5;
 	display: inline-block;
 	line-height: 40px;
 	height: 100%;
 	vertical-align: middle;
 	font-size: 1.2rem;
-  padding-left: 30px;
+	padding-left: 30px;
 }
 
 .notification .dismiss,.notification .icon{
@@ -81,7 +81,7 @@
 	height: 20px;
 	width: 20px;
 	filter: brightness(100%);
-  -webkit-filter: brightness(100%);
+	-webkit-filter: brightness(100%);
 	cursor: pointer;
 	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIj48c3R5bGU+LnMwe2ZpbGw6I2ZmZjt9PC9zdHlsZT48cGF0aCBkPSJtMiAzIDYgMCAwLTIgNCAwIDAgMiA2IDAgMCAyLTE2IDB6TTMgNmwyIDAgMCAxMSAxMCAwIDAtMTEgMiAwIDAgMTMtMTQgMHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=');
 }
@@ -92,11 +92,11 @@
 }
 
 .notification.counting .progress{
-  width: 100%;
-  transition: width linear 5s;
+	width: 100%;
+	transition: width linear 5s;
 }
 
 .notification:hover .progress{
-  width: 0%;
-  transition: none!important;
+	width: 0%;
+	transition: none!important;
 }
