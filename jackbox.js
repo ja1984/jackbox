@@ -1,15 +1,22 @@
 (function (window) {
   var lib = {};
   lib.version = 1.0;
+
   lib.settings = {
+    oldBrowserSupport: false,
+
     notification: {
       time: 5,
-      classNames: []
+      actionButtonText: 'Dismiss',
+      classNames: [],
+      icon: '<i></i>'
     }
   }
 
   lib.init = function (customSettings) {
+    
     lib.settings = Object.assign({}, lib.settings, customSettings);
+    
     var wrapper = document.createElement("div");
     wrapper.classList.add("notifications");
     wrapper.id = "jackbox";
@@ -19,33 +26,44 @@
   var createNotification = function (_message, type) {
     var notification = document.createElement("div");
     var progress = document.createElement("div");
-    var message = document.createElement("span");
-    var dismissButton = document.createElement("div");
+    var message = document.createElement("div");
+    var action = document.createElement("div");
+    var actionButton = document.createElement("div");
     var icon = document.createElement("div");
+
+    icon.innerHTML = lib.settings.notification.icon;
 
     var ttl = lib.settings.notification.time;
     var timeout = null;
-    
+
     notification.classList.add("notification");
     notification.classList.add(type);
-  
-    lib.settings.notification.classNames.forEach(function (className){
+
+    lib.settings.notification.classNames.forEach(function (className) {
       notification.classList.add(className);
     })
 
     progress.classList.add("progress");
-    progress.style.transitionDuration =  lib.settings.notification.time + "s";
+    
+    progress.style.transitionDuration = lib.settings.notification.time + "s";
 
     message.innerHTML = _message;
     message.classList.add("message");
 
-    dismissButton.classList.add("dismiss");
+    action.classList.add("action");
+    actionButton.classList.add("action-button");
+    actionButton.innerHTML = lib.settings.notification.actionButtonText;
     icon.classList.add("icon");
 
-    notification.appendChild(progress);
-    notification.appendChild(message);
-    notification.appendChild(dismissButton);
+    action.appendChild(actionButton);
+
+    
+    
+    
     notification.appendChild(icon);
+    notification.appendChild(message);
+    notification.appendChild(action);
+    notification.appendChild(progress);
 
     var purge = function () {
       notification.classList.remove("show");
@@ -65,17 +83,17 @@
 
     var startCounter = function () {
       setTimeout(function () {
-        if (!notification.classList.contains("counting")){
+        if (!notification.classList.contains("counting")) {
           notification.classList.add("counting");
         }
-        if(timeout != null){
+        if (timeout != null) {
           window.clearTimeout(timeout);
         }
         timeout = window.setTimeout(purge, (ttl * 1000));
       }, 10);
     }
 
-    dismissButton.addEventListener('click', purge);
+    actionButton.addEventListener('click', purge);
     notification.addEventListener('mouseenter', resetCounter);
     notification.addEventListener('mouseleave', startCounter);
 
@@ -87,7 +105,7 @@
     startCounter();
   }
 
-  lib.error = function (_message ) {
+  lib.error = function (_message) {
     createNotification(_message, "error");
   }
 

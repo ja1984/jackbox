@@ -6,22 +6,55 @@
 }
 
 .notification{
-  padding: 0 10px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  transition: height ease .2s;
+  overflow: hidden;
+  height: 0;
+  position: relative;
+  /*padding: 0 10px;
   height: 0;
   position: relative;
   transition: height ease .2s;
-  overflow: hidden;
+  overflow: hidden;*/
 }
 
 .notification.show{
 	height: 40px;
 }
 
+.notification .icon, .notification .message, .notification .action{
+  flex-grow: 1;
+  padding: 0 .5rem;
+}
+
+.notification .icon, .notification .action{
+  flex: 0 auto;
+}
+
+.notification .action-button{
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.notification .message{
+      flex: 3 0px;
+}
+
 .notification.error{
   background: #D32F2F;
 }
 
-.notification.error .icon{
+.notification .icon i{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.notification.error .icon i{
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAP1BMVEX///////////////////////////////////////////////////////////////////////////////////81m6ZbAAAAFHRSTlMAARMUFRZCRUjHyMrLzNDR0tPU1a674P0AAABpSURBVHjaldBRDsAQEARQalVptaj7n7XCiGzqx3xtHrEZYi1yMh4n9VF7g8MrR4K92eIuxaKwexMIpZyo2gPrqmEjumgxNQTP5QDjSD8LgWnbq4irbjugzJhKX3tAHWoaO7q5ffp1S/kAqTkFoLZRo+IAAAAASUVORK5CYII=);
 
 }
@@ -30,7 +63,7 @@
   background: #FFC107;
 }
 
-.notification.warning .icon{
+.notification.warning .icon i{
   	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAbFBMVEX///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////82G0A9AAAAI3RSTlMAAwgJChYYHDM5Pj9UVl5gand/hoqMo6ixzNLW1/Dy9fj5/d1ifTIAAABpSURBVHgBfcvXDsIwDEZh9t4DwgiBnPd/R6TWbqPW8n919Fke+IOuzK9veJ5npe0T1T7b1nZwX47Gq0DeNL+JQ11H4lTwwk3vgZPUi4XimofULw8VJ0QpvmpFQ4E4aLzbSG82+gOw0dsfxfMOG7rxV1MAAAAASUVORK5CYII=);
 
 }
@@ -39,7 +72,7 @@
   background: #0288D1;
 }
 
-.notification.information .icon{
+.notification.information .icon i{
   	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAElBMVEX///////////////////////+65XQCAAAABXRSTlMAWVqA/JrNy4MAAAAzSURBVHgBY8AOWDEAbkFUnUNKEOYNJhZMbzLCxVgRelhYmTGDClOMAZsYAzYxBqAYIQAAOhcCT05GiOkAAAAASUVORK5CYII=);
 
 }
@@ -48,7 +81,7 @@
   background: #4CAF50;
 }
 
-.notification.success .icon{
+.notification.success .icon i{
   	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAANlBMVEX///////////////////////////////////////////////////////////////////////8BOg0gAAAAEXRSTlMADBUWISIvN0VHw8TS1eHx+lKCPYwAAABASURBVHgBY6ADYGTDIsbFz44pJsjHikeMgwlTjFOAhwlDLzOvIEgUIYYQhYqhinIjxBCiYDF0UZAYhigLjcMPABCQAp33JzUTAAAAAElFTkSuQmCC);
 
 }
@@ -61,22 +94,18 @@
   background: #fff;
   opacity: .2;
   width: 0%;
+  flex-grow: none;
+  padding: 0;
 }
 
 .notification .message{
-  display: inline-block;
   color: #fff;
   position: relative;
   z-index: 5;
-      display: inline-block;
-    line-height: 40px;
-    height: 100%;
-    vertical-align: middle;
 	font-size: 1.2rem;
-  padding-left: 30px;
 }
 
-.notification .dismiss,.notification .icon{
+.notification .dismiss{
 	position: absolute;
 	right: 10px;
 	top: 10px;
@@ -89,10 +118,6 @@
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAABlBMVEX///////9VfPVsAAAAAXRSTlMAQObYZgAAACBJREFUeAFjwAsYgYCQICMawCqI1w5k9jAWRAC8gpgAAFq6AHEXHe01AAAAAElFTkSuQmCC);
 }
 
-.notification .icon{
-	right: auto;
-	left: 10px;
-}
 
 .notification.counting .progress{
   width: 100%;
