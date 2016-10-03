@@ -96,14 +96,10 @@
 	font-size: 1.2rem;
 }
 
-.notification .dismiss{
-	position: absolute;
-	right: 10px;
-	top: 10px;
-	height: 20px;
-	width: 20px;
-	filter: brightness(100%);
-  -webkit-filter: brightness(100%);
+.notification .action-button i{
+	display: block;
+  width: 20px;
+  height: 20px;
 	cursor: pointer;
 	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIj48c3R5bGU+LnMwe2ZpbGw6I2ZmZjt9PC9zdHlsZT48cGF0aCBkPSJtMiAzIDYgMCAwLTIgNCAwIDAgMiA2IDAgMCAyLTE2IDB6TTMgNmwyIDAgMCAxMSAxMCAwIDAtMTEgMiAwIDAgMTMtMTQgMHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=');
 }

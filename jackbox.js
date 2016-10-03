@@ -7,7 +7,7 @@
 
     notification: {
       time: 5,
-      actionButtonText: 'Dismiss',
+      actionButtonText: '<i></i>',
       classNames: [],
       icon: '<i></i>'
     }
