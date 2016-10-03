@@ -33,25 +33,22 @@
 
       <div class="highlight highlight-source-js">
         <pre>
-          <span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
-          <span class="pl-smi">Jackbox</span>.<span class="pl-en">init</span>();
-          <span class="pl-k">&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span> </pre>
+<span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
+    <span class="pl-smi">Jackbox</span>.<span class="pl-en">init</span>();
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span> </pre>
       </div>
 
       <h4>
         <a id="adding-notifications-is-just-as-easy" class="anchor" href="#adding-notifications-is-just-as-easy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Adding notifications is just as easy</h5>
 
         <div class="highlight highlight-source-js">
-          <pre><span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
-            <span class="pl-smi">Jackbox</span>.<span class="pl-en">error</span>(<span class="pl-s"><span class="pl-pds">"</span>Oh
-            noes, something went wrong!<span class="pl-pds">"</span></span>);
-            <span class="pl-smi">Jackbox</span>.<span class="pl-en">warning</span>(<span class="pl-s"><span class="pl-pds">"</span>Yeah,
-            you might want to check in to that<span class="pl-pds">"</span></span>);
-            <span class="pl-smi">Jackbox</span>.<span class="pl-en">success</span>(<span class="pl-s"><span class="pl-pds">"</span>Woop
-            woop!<span class="pl-pds">"</span></span>);
-            <span class="pl-smi">Jackbox</span>.<span class="pl-en">information</span>(<span class="pl-s"><span class="pl-pds">"</span>I'm
-            only here because I can<span class="pl-pds">"</span></span>);
-            <span class="pl-k">&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span></pre>
+          <pre>
+<span class="pl-k">&lt;</span>script<span class="pl-k">&gt;</span>
+    <span class="pl-smi">Jackbox</span>.<span class="pl-en">error</span>(<span class="pl-s"><span class="pl-pds">"</span>Oh noes, something went wrong!<span class="pl-pds">"</span></span>);
+    <span class="pl-smi">Jackbox</span>.<span class="pl-en">warning</span>(<span class="pl-s"><span class="pl-pds">"</span>Yeah, you might want to check in to that<span class="pl-pds">"</span></span>);
+    <span class="pl-smi">Jackbox</span>.<span class="pl-en">success</span>(<span class="pl-s"><span class="pl-pds">"</span>Woop woop!<span class="pl-pds">"</span></span>);
+    <span class="pl-smi">Jackbox</span>.<span class="pl-en">information</span>(<span class="pl-s"><span class="pl-pds">"</span>I'm only here because I can<span class="pl-pds">"</span></span>);
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>script<span class="pl-k">&gt;</span></pre>
 
 
 <h4>Try it out</h4>
@@ -74,12 +71,13 @@
   <script src="jackbox.js"></script>
   <script>
 	var notificationCustomSettings = {
-		time : 20,
-		classNames: ["long-notification-class"],
-    actionButtonText: 'OK!'
+        time : 20,
+        classNames: ["long-notification-class"],
+        actionButtonText: 'OK!'
 	}
     var customSettings = {
       oldBrowserSupport: false,
+      
       notification:{
         time: 10,
         classNames: ["custom-class-name", "another-class-name"]
