@@ -24,7 +24,7 @@
   }
 
   var createNotification = function (_message, type, customSettings) {
-	var settings = Object.assign({}, lib.settings.notification, customSettings);
+	  var settings = Object.assign({}, lib.settings.notification, customSettings);
     var notification = document.createElement("div");
     var progress = document.createElement("div");
     var message = document.createElement("div");
@@ -33,7 +33,7 @@
     var icon = document.createElement("div");
 
     var ttl = settings.time;
-    icon.innerHTML = lib.settings.notification.icon;
+    icon.innerHTML = settings.icon;
 
     var timeout = null;
 
@@ -52,7 +52,7 @@
 
     action.classList.add("action");
     actionButton.classList.add("action-button");
-    actionButton.innerHTML = lib.settings.notification.actionButtonText;
+    actionButton.innerHTML = settings.actionButtonText;
     icon.classList.add("icon");
 
     action.appendChild(actionButton);

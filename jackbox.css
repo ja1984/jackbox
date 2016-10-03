@@ -49,7 +49,7 @@
 }
 
 .notification .icon i{
-  display: inline-block;
+  display: block;
   width: 20px;
   height: 20px;
 }

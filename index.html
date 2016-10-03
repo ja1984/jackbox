@@ -75,15 +75,17 @@
   <script>
 	var notificationCustomSettings = {
 		time : 20,
-		classNames: ["long-notification-class"]
+		classNames: ["long-notification-class"],
+    actionButtonText: 'OK!',
+    icon: '<i></i>'
 	}
     var customSettings = {
-      settings: {
       notification:{
         time: 10,
-        classNames: ["custom-class-name", "another-class-name"]
+        classNames: ["custom-class-name", "another-class-name"],
+        actionButtonText: 'Dismiss',
+        icon: '<i></i>'
       }
-    }
     }
     Jackbox.init(customSettings);
   </script>
