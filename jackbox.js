@@ -3,8 +3,6 @@
   lib.version = 1.0;
 
   lib.settings = {
-    oldBrowserSupport: false,
-
     notification: {
       time: 5,
       actionButtonText: '<i></i>',
@@ -44,7 +42,7 @@
 
     notification.classList.add("notification");
 
-    if (lib.settings.oldBrowserSupport)
+    if (!notification.style.flex === undefined)
       notification.classList.add("old-support")
 
     notification.classList.add(type);
