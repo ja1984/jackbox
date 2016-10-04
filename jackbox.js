@@ -17,7 +17,7 @@
       lib.oldBrowserSupport = customSettings.oldBrowserSupport || false;
       lib.settings.notification = Object.assign({}, lib.settings.notification, customSettings.notification);
     }
-    
+
 
     var wrapper = document.createElement("div");
     wrapper.classList.add("notifications");
@@ -27,7 +27,7 @@
 
   var createNotification = function (_message, type, customSettings) {
     var notificationSettings = Object.assign({}, lib.settings.notification, customSettings);
-    
+
     var notification = document.createElement("div");
     var progress = document.createElement("div");
     var message = document.createElement("div");
@@ -47,11 +47,7 @@
 
     notification.classList.add(type);
 
-<<<<<<< HEAD
-    settings.classNames.forEach(function (className){
-=======
     notificationSettings.classNames.forEach(function (className) {
->>>>>>> upstream/master
       notification.classList.add(className);
     })
 
@@ -90,7 +86,6 @@
     }
 
     var startCounter = function () {
-<<<<<<< HEAD
       if (!notification.classList.contains("stop-counting")) {
         setTimeout(function () {
           if (!notification.classList.contains("counting")){
@@ -107,17 +102,6 @@
     var stopCounter = function () {
       notification.classList.add("stop-counting");
       resetCounter();
-=======
-      setTimeout(function () {
-        if (!notification.classList.contains("counting")) {
-          notification.classList.add("counting");
-        }
-        if (timeout != null) {
-          window.clearTimeout(timeout);
-        }
-        timeout = window.setTimeout(purge, (ttl * 1000));
-      }, 10);
->>>>>>> upstream/master
     }
 
     actionButton.addEventListener('click', purge);
