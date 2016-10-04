@@ -1,15 +1,24 @@
 (function (window) {
   var lib = {};
   lib.version = 1.0;
+
   lib.settings = {
     notification: {
       time: 5,
-      classNames: []
+      actionButtonText: '<i></i>',
+      classNames: [],
+      icon: '<i></i>'
     }
   }
 
   lib.init = function (customSettings) {
-    lib.settings = Object.assign({}, lib.settings, customSettings);
+
+    if(customSettings){
+      lib.oldBrowserSupport = customSettings.oldBrowserSupport || false;
+      lib.settings.notification = Object.assign({}, lib.settings.notification, customSettings.notification);
+    }
+    
+
     var wrapper = document.createElement("div");
     wrapper.classList.add("notifications");
     wrapper.id = "jackbox";
@@ -17,36 +26,52 @@
   }
 
   var createNotification = function (_message, type, customSettings) {
-	var settings = Object.assign({}, lib.settings.notification, customSettings);
+    var notificationSettings = Object.assign({}, lib.settings.notification, customSettings);
+    
     var notification = document.createElement("div");
     var progress = document.createElement("div");
-    var message = document.createElement("span");
-    var dismissButton = document.createElement("div");
+    var message = document.createElement("div");
+    var action = document.createElement("div");
+    var actionButton = document.createElement("div");
     var icon = document.createElement("div");
 
-    var ttl = settings.time;
+    var ttl = notificationSettings.time;
+    icon.innerHTML = notificationSettings.icon;
+
     var timeout = null;
 
     notification.classList.add("notification");
+
+    if (!notification.style.flex === undefined)
+      notification.classList.add("old-support")
+
     notification.classList.add(type);
 
+<<<<<<< HEAD
     settings.classNames.forEach(function (className){
+=======
+    notificationSettings.classNames.forEach(function (className) {
+>>>>>>> upstream/master
       notification.classList.add(className);
     })
 
     progress.classList.add("progress");
-    progress.style.transitionDuration =  ttl + "s";
+    progress.style.transitionDuration = ttl + "s";
 
     message.innerHTML = _message;
     message.classList.add("message");
 
-    dismissButton.classList.add("dismiss");
+    action.classList.add("action");
+    actionButton.classList.add("action-button");
+    actionButton.innerHTML = notificationSettings.actionButtonText;
     icon.classList.add("icon");
 
-    notification.appendChild(progress);
-    notification.appendChild(message);
-    notification.appendChild(dismissButton);
+    action.appendChild(actionButton);
+
     notification.appendChild(icon);
+    notification.appendChild(message);
+    notification.appendChild(action);
+    notification.appendChild(progress);
 
     var purge = function () {
       notification.classList.remove("show");
@@ -65,6 +90,7 @@
     }
 
     var startCounter = function () {
+<<<<<<< HEAD
       if (!notification.classList.contains("stop-counting")) {
         setTimeout(function () {
           if (!notification.classList.contains("counting")){
@@ -81,9 +107,20 @@
     var stopCounter = function () {
       notification.classList.add("stop-counting");
       resetCounter();
+=======
+      setTimeout(function () {
+        if (!notification.classList.contains("counting")) {
+          notification.classList.add("counting");
+        }
+        if (timeout != null) {
+          window.clearTimeout(timeout);
+        }
+        timeout = window.setTimeout(purge, (ttl * 1000));
+      }, 10);
+>>>>>>> upstream/master
     }
 
-    dismissButton.addEventListener('click', purge);
+    actionButton.addEventListener('click', purge);
     notification.addEventListener('mouseenter', resetCounter);
     notification.addEventListener('click', stopCounter);
     notification.addEventListener('mouseleave', startCounter);
