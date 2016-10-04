@@ -99,14 +99,14 @@
       }
     }
 
-    var stopCounter = function () {
-      notification.classList.add("stop-counting");
+    var toggleCounter = function () {
+      notification.classList.toggle("stop-counting");
       resetCounter();
     }
 
     actionButton.addEventListener('click', purge);
     notification.addEventListener('mouseenter', resetCounter);
-    notification.addEventListener('click', stopCounter);
+    notification.addEventListener('click', toggleCounter);
     notification.addEventListener('mouseleave', startCounter);
 
     document.getElementById("jackbox").appendChild(notification);
