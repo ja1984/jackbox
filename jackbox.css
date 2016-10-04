@@ -6,44 +6,44 @@
 }
 
 .notification{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    transition: height ease .2s;
-    overflow: hidden;
-    height: 0;
-    position: relative;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	transition: height ease .2s;
+	overflow: hidden;
+	height: 0;
+	position: relative;
 }
 
 .notification.show{
-    height: 40px;
+	height: 40px;
 }
 
 .notification .icon, .notification .message, .notification .action{
-    flex-grow: 1;
-    padding: 0 .5rem;
-    color: #fff;
+	flex-grow: 1;
+	padding: 0 .5rem;
+	color: #fff;
 }
 
 .notification .icon, .notification .action{
-    flex: 0 auto;
+	flex: 0 auto;
 }
 
 .notification .icon i, .notification .action .action-button i{
-    display: block;
-    width: 20px;
-    height: 20px;
+	display: block;
+	width: 20px;
+	height: 20px;
 }
 
 .notification .message{
-    font-size: 1.2rem;
-    flex: 3 0;
+	font-size: 1.2rem;
+	flex: 3 0;
 }
 
 .notification .action .action-button{
-    text-transform: uppercase;
-    cursor: pointer;
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .notification .progress{
@@ -54,23 +54,23 @@
 	background: #fff;
 	opacity: .2;
 	width: 0;
-    flex-grow: none;
-    padding: 0;
+	flex-grow: none;
+	padding: 0;
 }
 
 .notification.old-support{
-    display: table;
-    flex: none;
+	display: table;
+	flex: none;
 }
 
 .notification.old-support .icon, .notification.old-support .message, .notification.old-support .action{
-    display: table-cell;
-    vertical-align:middle;
-    width: 100%;
+	display: table-cell;
+	vertical-align:middle;
+	width: 100%;
 }
 
 .notification.old-support .icon, .notification.old-support .action{
-    width: auto;
+	width: auto;
 }
 
 .notification.counting .progress{
