@@ -17,7 +17,7 @@
       lib.oldBrowserSupport = customSettings.oldBrowserSupport || false;
       lib.settings.notification = Object.assign({}, lib.settings.notification, customSettings.notification);
     }
-    
+
 
     var wrapper = document.createElement("div");
     wrapper.classList.add("notifications");
@@ -27,7 +27,7 @@
 
   var createNotification = function (_message, type, customSettings) {
     var notificationSettings = Object.assign({}, lib.settings.notification, customSettings);
-    
+
     var notification = document.createElement("div");
     var progress = document.createElement("div");
     var message = document.createElement("div");
@@ -86,19 +86,27 @@
     }
 
     var startCounter = function () {
-      setTimeout(function () {
-        if (!notification.classList.contains("counting")) {
-          notification.classList.add("counting");
-        }
-        if (timeout != null) {
-          window.clearTimeout(timeout);
-        }
-        timeout = window.setTimeout(purge, (ttl * 1000));
-      }, 10);
+      if (!notification.classList.contains("stop-counting")) {
+        setTimeout(function () {
+          if (!notification.classList.contains("counting")){
+            notification.classList.add("counting");
+          }
+          if(timeout != null){
+            window.clearTimeout(timeout);
+          }
+          timeout = window.setTimeout(purge, (ttl * 1000));
+        }, 10);
+      }
+    }
+
+    var toggleCounter = function () {
+      notification.classList.toggle("stop-counting");
+      resetCounter();
     }
 
     actionButton.addEventListener('click', purge);
     notification.addEventListener('mouseenter', resetCounter);
+    notification.addEventListener('click', toggleCounter);
     notification.addEventListener('mouseleave', startCounter);
 
     document.getElementById("jackbox").appendChild(notification);
